@@ -1,0 +1,711 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+}
+body::-webkit-scrollbar{
+   display: block;
+   width: 5px;
+   background-color: rgb(76, 205, 50);
+}
+body::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 50px;
+ }
+#cursor{
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursorblur{
+    height: 20rem;
+    width: 20rem;
+    background-color: rgba(95, 248, 81, 0.363);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(45px);
+    z-index:9;
+}
+#nav{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+     gap:2rem;
+     position: fixed;
+     z-index: 99;
+     background-color: rgba(0, 0, 0, 0.4);
+}
+#nav #logo{
+    margin-left: 4rem;
+    height: 4rem;
+    width: 4rem;
+}
+
+#nav ul{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#nav ul li{
+  list-style: none;
+}
+#nav ul li a{
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+video{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#page1{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    z-index:10;
+}
+#page1 h1{
+    font-size: 8rem;
+    font-weight: 800;
+    position: relative;
+
+}
+#page1 h1::before{
+    content:"EAT. PLAY. WATCH.";
+    position: absolute;
+    color: black;
+    top:4px;
+    right:-4px;
+    -webkit-text-stroke: 4px rgb(23, 12, 78);
+    z-index: -1;
+    
+}
+#page1 h2{
+    font-size: 4rem;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-top: 2rem;
+}
+#page1 h3{
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+#page1 p{
+    font-size: 1.2rem;
+    font-weight: 450;
+    width: 50%;
+    text-wrap: wrap;
+}
+#page1 #arrow{
+    height: 8rem;
+    width: 8rem;
+    background-color: transparent;
+    border: 2px solid rgb(67, 226, 43);
+    position: fixed;
+    left: 0%;
+    left: 1rem;
+    bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all ease 0.6s;
+}
+#page1 #arrow:hover{
+    scale:0.4;
+    background-color: rgb(78, 222, 38);
+
+}
+
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+    
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in{
+    margin-top: 5rem;
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 8rem;
+    font-weight:800;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-bottom: 100px;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all linear 0.8s;
+    -webkit-text-stroke: 2px rgb(21, 245, 51);
+}
+#scroller h4:hover{
+    color: rgb(15, 236, 44);
+}
+@keyframes scroll{
+    from{
+        transform: translate(0%);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+
+#about{
+    position: relative;
+    display: flex;
+    padding: 1rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+#about img{
+  width: 28vw;
+  height: 300px;
+  border-radius: 20px;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+#abus{
+    text-align: center;
+    font-size: 2.6rem;
+    margin: 2rem;
+    width: auto;
+    height: auto;
+}
+#abus p{
+    font-size: 1.15rem;
+    width:100%;
+    height: 100px;
+    text-wrap: wrap;
+}
+
+#cards{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 10;
+}
+
+.card{
+    width: 26vw;
+    height: 370px;
+    border-radius: 20px;
+    margin-top: 80px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all linear 0.4s;
+}
+#c1{
+    background-image: url(pexels-coco-championship-191448-598631.jpg);
+}
+#c2{
+    background-image: url(pexels-lukas-hartmann-304281-1127120.jpg);
+}
+#c3{
+    background-image: url(pexels-steshkawillems-1661950.jpg);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    padding-top: 0.8rem;
+    padding: 2rem;
+    opacity: 0;
+    transition: all linear 0.5s;
+}
+.overlay h4{
+    color: rgb(18, 214, 41);
+    font-size: 23px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+.overlay p{
+    color:rgba(255, 255, 255, 0.707);
+    text-align: start;
+    font-size: 1.1rem;
+}
+.card:hover .overlay{
+    background-color: rgb(0, 0, 0,0.6);
+    opacity: 1;
+}
+.card:hover{
+    scale: 1.1;
+}
+
+#gd{
+    background: linear-gradient(to right bottom,rgb(13, 206, 13) 0%,rgb(130, 220, 140) 80%);
+    height: 30vh;
+    margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+}
+#gd #d1{
+    padding: 1rem 10rem;
+   text-align: center;
+   
+}
+#gd h4{
+    display: inline;
+    color:black;
+    font-weight: 800;
+    line-height: 2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#gd #spl{
+    font-size: 30px;
+    font-weight: 900;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(5, 154, 25);
+}
+#gd img{
+    scale: 1.2;
+    mix-blend-mode: multiply;
+    height: 100%;
+    width: 50vw;
+    opacity: 1;
+
+}
+#gd #gd2{
+    rotate: 180deg;
+}
+
+
+@media (max-width:800px) {
+    
+#nav{
+    height: 4rem;
+    width: 100%;
+    gap:1rem;
+}
+#nav #logo{
+    margin-left: 2rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+#nav ul{
+    width: 90%;
+    height: 100%;
+}
+#nav ul li{
+  list-style: none;
+}
+#nav ul li a{
+    font-size: 1rem;
+    font-weight: 600;
+}
+#page1 h1{
+    font-size: 4rem;
+    font-weight: 800;
+}
+#page1 h2{
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-top: 1rem;
+}
+#page1 h3{
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+#page1 p{
+    font-size: 1rem;
+    font-weight: 500;
+    width: 70%;
+    text-wrap: wrap;
+}
+#page1 #arrow{
+    height: 6rem;
+    width: 6rem;
+    left: 0.5rem;
+    bottom: 0.5rem;
+}
+#scroller h4{
+    font-size: 6rem;
+    font-weight:800;
+}
+    #about{
+        flex-direction: column;
+    }
+    #about img{
+        width: 50vw;
+        height: 350px;
+      }
+    #abus{
+        text-align: center;
+        font-size: 2rem;
+    }
+    #abus p{
+        padding: 0 2rem;
+        font-size: 1rem;
+    }
+    #cards{
+      flex-direction: column;
+    }
+    .card{
+        width: 50vw;
+        height: 350px;
+    }  
+    #gd{
+        height: 20vh;
+    }
+    #gd #d1{
+       padding: 0;
+    }
+    #gd h4{
+    font-weight: 500;
+    line-height: 0.5rem;
+    text-align: start;
+    font-size: 1rem;
+     
+    }
+    #gd #spl{
+       font-size: 1.2rem;
+    }
+    #gd img{
+        position: relative;
+        width: 20vw;
+        height: 20vh;
+    }
+    #gd #gd1{
+       left: 0;
+    }
+    #gd #gd2{
+        right: 0;
+        rotate: 180deg;
+    }
+
+    
+}
+
+#page3{
+    height: 150vh;
+    width: 100%;
+    background-color: black;
+    position: relative;
+
+}
+#page3 table tr{
+    /* position: relative; */
+    margin-top: 10rem ;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 60vh;
+}
+table tr td{
+    width: 35%;
+    height: 100%;
+}
+#cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+    text-align: start;
+}
+#cont h3{
+    font-size: 3rem;
+    font-weight: 700;
+}
+#cont p{
+    font-size: 1.3rem;
+    width: 70%;
+    line-height: normal;
+    text-wrap: wrap;
+    font-weight: 600;
+}
+#page3 table tr td img{
+    border-radius: 20px;
+    width: 32vw;
+    height: 100%;
+    object-fit: cover;
+}
+#b1 button{
+    font-size: 1rem;
+    padding: 2px 5px;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgb(47, 255, 71);
+    box-shadow: 0 0 10px rgba(47, 255, 71, 0.555),
+                0 0 50px rgb(47, 255, 71,0.5);
+    border-radius: 20px;
+    cursor:pointer;
+    transition: all 0.4s linear;
+}
+
+.quort{
+    margin-top: 10%;
+    /* overflow: hidden; */
+    height: 30vh;
+    align-content: center;
+}
+#par1{
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 0 15%;
+    text-align: center;
+    text-wrap: wrap;
+
+}
+#upcoma{
+    position: relative;
+    height: 6rem;
+    left: 5rem;
+    overflow: hidden;
+}
+#downcoma{
+    position: absolute;
+    overflow: hidden;
+    height: 6rem;
+    right: 5rem;
+}
+
+#page4{
+    height: 100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    background-color: black;
+    position: relative;
+    padding-top: 15rem;
+}
+.elem{
+    width: 27vw;
+    height: 40vh;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+}
+#page4 .elem img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 0.6s;
+  scale: 1.2;
+  
+}
+.elem h2{
+    height:100%;
+    width:100%;
+    background-color: rgb(94, 205, 50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: 800;
+    font-size: 2.8rem;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.5s;
+}
+.elem:hover h2{
+    color: white;
+    background-color: transparent;
+}
+.elem:hover #igs{
+   scale: 1;
+}
+#page4 h1{
+    font-size: 6rem;
+    position: absolute;
+    top: 20%;
+    font-weight: 750;
+    color: rgb(0, 0, 0);
+    filter: drop-shadow(0 0 20px rgb(28, 217, 28));
+    -webkit-text-stroke: 2px #fff;
+}
+@media (max-width:800px) {
+    
+#page3 table tr{
+    flex-direction: column;
+    margin-top:7rem;
+}
+#cont{
+    width: 100%;
+    padding: 2rem 2rem;
+}
+#cont h3{
+    font-size: 2rem;
+    font-weight: 700;
+}
+#cont p{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+#page3 table tr td img{
+    overflow: hidden;
+    width: 60vw;
+    border-radius: 20px;
+}
+.quort{
+    margin-top: 15rem;
+    height: 20vh;
+    align-content: start;
+}
+#par1{
+    font-size: 1rem;
+    font-weight: 700;
+}
+ #upcoma{
+    height: 2rem;
+} 
+#downcoma{
+    height: 2rem; 
+} 
+#page4{
+    gap: 2rem;
+}
+/* .elem{
+} */
+.elem h2{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+#page4 h1{
+    font-size: 6rem;
+    position: absolute;
+    top: 6%;
+    font-weight: 700;
+}
+}
+#footer{
+    height: 25vh;
+    width: 100%;
+    background:linear-gradient(to right bottom,rgb(10, 187, 10) 0%,rgb(151, 205, 137) 80%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#footer img{
+    position: absolute;
+    left: 0;
+    height: 100%;
+}
+#f1 img{
+    position: relative;
+    width: 10vw;
+}
+#f2 h3{
+    font-size: 1.4rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 900;
+}
+#f3 h3{
+    font-size: 1.4rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 800;
+}
+#f4 h4{
+    font-size: 1.1rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 600;
+}
+
+@media (max-width:650px) {
+        
+#nav{
+    height: 1rem;
+    width: 100%;
+    gap:0rem;
+}
+#nav #logo{
+    margin-left: 0.1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+#nav h3{
+    font-size: 0.8rem;
+}
+#nav ul{
+    width: 100%;
+    /* height: 100%; */
+}
+#nav ul li a{
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+    #footer{
+        height: 20vh;
+    }
+    #f2 h3{
+        font-size: 1rem;
+    }
+    #f3 h3{
+        font-size: 1rem;
+    }
+    #f4 h4{
+        font-size: 0.8rem;
+   
+    }
+    
+}
+
+@media (max-width:350px) {
+    #footer{
+        height: 15vh;
+    }
+    #f2 h3{
+        font-size: 0.8rem;
+    }
+    #f3 h3{
+        font-size: 0.8rem;
+    }
+    #f4 h4{
+        font-size: 0.6rem;
+   
+    }
+    
+}
